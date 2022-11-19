@@ -1,0 +1,18 @@
+<h1>{{ title }}</h1>
+
+<div>
+    Tracks :
+
+    <ul>
+        {% for track in tracks1 %}
+            <li>{{ track }}</li>
+        {% endfor %}
+    </ul>
+
+    <ul>
+        {% for track in tracks2 %}
+            <li>{{ track.title }} : {{ track.artist }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
