@@ -1,3 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Choose a record - {{ parent() }}{% endblock %}
+
+{% block body %}
 <h1>{{ title }}</h1>
 
 <div>
@@ -11,8 +16,8 @@
 
     <ul>
         {% for track in tracks2 %}
-            <li>{{ track.title }} : {{ track.artist }}</li>
+            <li>{{ track.title|upper|lower }} : {{ track.artist }}</li>
         {% endfor %}
     </ul>
 </div>
-
+{% endblock %}
