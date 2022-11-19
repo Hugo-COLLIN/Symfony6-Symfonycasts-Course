@@ -14,12 +14,12 @@ class VinylController
         return new Response("Ca marche !");
     }
 
-    #[Route('/browse/{slug}')]
-    public function browse(string $slug = null) : Response
+    #[Route('/browse/{genre}')]
+    public function browse(string $genre = null) : Response
     {
-        if ($slug)
+        if ($genre)
         {
-            $title = "Genre : " . str_replace("-", " ", $slug);
+            $title = "Genre : " . str_replace("-", " ", $genre);
             $title = u($title)->title(true);
             //$title = ucwords($title); // equivalent
         }
