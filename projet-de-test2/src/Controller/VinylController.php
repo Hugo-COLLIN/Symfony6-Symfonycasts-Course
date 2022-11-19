@@ -22,6 +22,9 @@ class VinylController extends AbstractController
             ["title" => 'Waterfalls', "artist" => 'TLC'],
         ];
 
+        //dd($tracks2);
+        //dump($tracks2);
+        //dump();
         return $this->render('vinyl/homepage.html.twig', [
             'title' => "Music App",
             'tracks1' => $tracks1,
