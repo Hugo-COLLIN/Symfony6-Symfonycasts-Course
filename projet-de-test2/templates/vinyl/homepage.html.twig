@@ -33,6 +33,7 @@
             </svg>
         </div>
         <div class="col-12 col-md-8 ps-5">
+            <div data-controller="hello"></div>
             <h2 class="mb-4">10 songs (30 minutes of 60 still available)</h2>
             {% for track in tracks2 %}
             <div class="song-list">
@@ -50,6 +51,7 @@
                 </div>
             </div>
             {% endfor %}
+            <div {{ stimulus_controller('hello') }}></div>
             <button type="button" class="btn btn-success"><i class="fas fa-plus"></i> Add a song</button>
         </div>
     </div>
