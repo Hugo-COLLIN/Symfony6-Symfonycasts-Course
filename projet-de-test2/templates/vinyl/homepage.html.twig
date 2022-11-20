@@ -33,12 +33,13 @@
             </svg>
         </div>
         <div class="col-12 col-md-8 ps-5">
-            <div data-controller="hello">Helly</div>
             <h2 class="mb-4">10 songs (30 minutes of 60 still available)</h2>
             {% for track in tracks2 %}
-            <div class="song-list">
+            <div class="song-list" {{ stimulus_controller('song-controls', {
+                infoUrl: path('api_songs_get_one', { id: loop.index })
+            }) }}>
                 <div class="d-flex mb-3">
-                    <a href="#">
+                    <a href="#" {{ stimulus_action('song-controls', 'play') }}>
                         <i class="fas fa-play me-3"></i>
                     </a>
                     <span class="song-details">{{ track.title }} - {{ track.artist }}</span>
@@ -51,7 +52,6 @@
                 </div>
             </div>
             {% endfor %}
-            <div {{ stimulus_controller('hello') }}></div>
             <button type="button" class="btn btn-success"><i class="fas fa-plus"></i> Add a song</button>
         </div>
     </div>
